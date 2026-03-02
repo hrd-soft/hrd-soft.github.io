@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRDSOFT | Autonomous AI Systems & Automation Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #030712; }
+        h1, h2, h3, h4, h5, .logo { font-family: 'Space Grotesk', sans-serif; }
+
+        .bg-dark { background-color: #030712; }
+        
+        .bento-card {
+            background: rgba(17, 24, 39, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-card:hover {
+            border-color: #22d3ee;
+            background: rgba(17, 24, 39, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .grid-pattern {
+            background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="text-slate-400 grid-pattern">
+
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="logo text-xl font-bold tracking-tighter text-white uppercase">
+                HRD<span class="text-cyan-400 font-light">SOFT</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em]">
+                <a href="#systems" class="hover:text-cyan-400 transition">Systems</a>
+                <a href="#architecture" class="hover:text-cyan-400 transition">Architecture</a>
+                <a href="#verticals" class="hover:text-cyan-400 transition">Verticals</a>
+            </div>
+            <a href="#audit" class="glow-button bg-cyan-500 text-black px-6 py-2 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-white transition">
+                Request System Audit
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-32 px-8 text-center md:text-left">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 mb-8 justify-center md:justify-start">
+                <span class="status-dot"></span>
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-cyan-500">Systems Operational // 2026</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold text-white leading-none mb-10 tracking-tighter">
+                Intelligent <br/> <span class="text-slate-700">Automation.</span>
+            </h1>
+            <p class="max-w-2xl text-xl text-slate-500 leading-relaxed mb-12">
+                We engineer autonomous communication pipelines for high-value enterprises. Specializing in <span class="text-white underline decoration-cyan-500 underline-offset-8">AI Voice Architecture</span> and full-stack operational intelligence.
+            </p>
+            <div class="h-[1px] w-full bg-gradient-to-r from-cyan-500/30 to-transparent"></div>
+        </div>
+    </header>
+
+    <section id="systems" class="py-24 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-600 mb-16 italic">Systems Core</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bento-card p-10 rounded-xl md:col-span-2">
+                    <div class="flex justify-between items-start mb-12 text-cyan-400">
+                        <i class="fas fa-phone-volume text-3xl"></i>
+                        <span class="text-[9px] border border-white/10 px-2 py-1 rounded text-slate-500 uppercase font-bold tracking-widest">System 01</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">Enterprise Voice Architecture</h3>
+                    <p class="text-slate-500 max-w-md">Human-grade voice synthesis for 24/7 autonomous front-desk operations, inbound triage, and outbound re-engagement.</p>
+                </div>
+                <div class="bento-card p-10 rounded-xl">
+                    <i class="fas fa-microchip text-3xl text-slate-400 mb-12"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">Workflow Logic</h3>
+                    <p class="text-slate-500">API-first bridges connecting CRM, Messaging, and Finance stacks.</p>
+                </div>
+                <div class="bento-card p-10 rounded-xl">
+                    <i class="fas fa-brain text-3xl text-slate-400 mb-12"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4 uppercase">AI Agents</h3>
+                    <p class="text-slate-500">Autonomous task execution for routine back-office data operations.</p>
+                </div>
+                <div class="bento-card p-10 rounded-xl md:col-span-2 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="max-w-sm">
+                        <h3 class="text-2xl font-bold text-white mb-4 uppercase italic">Specialist Consultancy</h3>
+                        <p class="text-slate-500">We don't just sell software. We audit your bottlenecks and architect custom IP for your specific business logic.</p>
+                    </div>
+                    <div class="flex gap-6 opacity-20 grayscale">
+                        <i class="fab fa-python text-4xl"></i>
+                        <i class="fab fa-aws text-4xl"></i>
+                        <i class="fab fa-node-js text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="py-24 px-8 border-y border-white/5 bg-black/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-cyan-500">Logic Schema</h2>
+                    <h3 class="text-4xl font-bold text-white tracking-tighter uppercase">Deployment <br/><span class="text-slate-700 italic underline decoration-slate-800">Architecture</span></h3>
+                    <div class="space-y-10 border-l border-white/10 pl-8 font-light">
+                        <div>
+                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">01. Intent Capture</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">API-driven triggers identify new inquiries across Voice, Web, and Messaging channels.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">02. Logic Synthesis</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">LLM-layer analyzes intent, qualifies lead value, and checks CRM real-time availability.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">03. Final Execution</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">Autonomous update of CRM records, calendar booking, and multi-channel SMS follow-up.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#0a0f1e] rounded-xl p-8 border border-white/10 shadow-2xl font-mono text-[11px] relative overflow-hidden">
+                    <div class="flex gap-2 mb-8">
+                        <div class="w-2.5 h-2.5 rounded-full bg-red-500/30"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/30"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-green-500/30"></div>
+                    </div>
+                    <p class="text-cyan-500 italic mb-4">// System Audit Log</p>
+                    <p class="text-slate-500">hrdsoft@system:~$ ./initiate-agent-01</p>
+                    <p class="text-slate-500">[OK] Connection to CRM_ENDPOINT_v2 established</p>
+                    <p class="text-white mt-4 font-bold">> INQUIRY DETECTED: [VERTICAL_REAL_ESTATE]</p>
+                    <p class="text-slate-400">> ACTION: Routing to Voice-Agent-A1...</p>
+                    <p class="text-green-500 mt-4 font-bold">> SUCCESS: Appointment confirmed for 14:00 GMT</p>
+                    <p class="text-slate-500">> LOG: Lead notification dispatched via SMS.</p>
+                    <p class="text-cyan-500 animate-pulse mt-4">_</p>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500/10 blur-[60px]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="verticals" class="py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-600 mb-16 text-center italic">Operational Verticals</h2>
+            <h3 class="text-4xl font-bold text-white text-center mb-16 tracking-tighter uppercase">Strategic Sector <span class="text-cyan-500">Deployments</span></h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                <div class="bg-dark p-12 hover:bg-[#060b1a] transition">
+                    <h5 class="text-white font-bold text-sm tracking-widest uppercase mb-4">Real Estate</h5>
+                    <p class="text-[10px] font-black text-cyan-500 mb-4 uppercase tracking-[0.2em]">Lead-To-Tour Automation</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Qualifying buyers and booking property showings 24/7 without human delay.</p>
+                </div>
+                <div class="bg-dark p-12 hover:bg-[#060b1a] transition">
+                    <h5 class="text-white font-bold text-sm tracking-widest uppercase mb-4">Healthcare</h5>
+                    <p class="text-[10px] font-black text-cyan-500 mb-4 uppercase tracking-[0.2em]">Patient Intake Architecture</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">HIPAA-ready voice booking and automated appointment reminders/re-scheduling.</p>
+                </div>
+                <div class="bg-dark p-12 hover:bg-[#060b1a] transition">
+                    <h5 class="text-white font-bold text-sm tracking-widest uppercase mb-4">Professional Services</h5>
+                    <p class="text-[10px] font-black text-cyan-500 mb-4 uppercase tracking-[0.2em]">Legal & Finance Triage</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">Case triaging and autonomous data collection for financial and legal audits.</p>
+                </div>
+                <div class="bg-dark p-12 hover:bg-[#060b1a] transition">
+                    <h5 class="text-white font-bold text-sm tracking-widest uppercase mb-4">Home Services</h5>
+                    <p class="text-[10px] font-black text-cyan-500 mb-4 uppercase tracking-[0.2em]">HVAC • Solar • Roofing</p>
+                    <p class="text-xs text-slate-500 leading-relaxed">"Speed-to-Lead" protocols ensuring you answer every inquiry first, every time.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 p-12 bento-card rounded-xl text-center">
+                <h5 class="text-white font-bold text-[10px] tracking-[0.5em] uppercase mb-6">Other High-Ticket Sectors</h5>
+                <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Automotive Dealerships • Logistics & Freight • High-Ticket E-Learning • Luxury Hospitality</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="audit" class="py-32 px-8 bg-black">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4 tracking-tighter uppercase">Initiate Audit</h2>
+                <p class="text-slate-500 uppercase text-[10px] tracking-[0.3em] font-bold italic">Confidential Performance Analysis</p>
+            </div>
+            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="FULL NAME" required class="w-full bg-transparent border border-white/10 p-5 text-white focus:border-cyan-500 outline-none text-[10px] tracking-widest uppercase">
+                    <input type="email" name="email" placeholder="CORPORATE EMAIL" required class="w-full bg-transparent border border-white/10 p-5 text-white focus:border-cyan-500 outline-none text-[10px] tracking-widest uppercase">
+                </div>
+                <select name="sector" class="w-full bg-transparent border border-white/10 p-5 text-slate-500 focus:border-cyan-500 outline-none text-[10px] tracking-widest uppercase font-bold">
+                    <option>Real Estate</option>
+                    <option>Healthcare/Medical</option>
+                    <option>Professional Services</option>
+                    <option>Home Services</option>
+                    <option>Other Vertical</option>
+                </select>
+                <textarea name="message" placeholder="DESCRIBE THE CURRENT BOTTLENECK" required class="w-full bg-transparent border border-white/10 p-5 text-white focus:border-cyan-500 outline-none h-32 text-[10px] tracking-widest uppercase"></textarea>
+                <button type="submit" class="w-full bg-white text-black font-black py-6 tracking-[0.4em] uppercase text-xs hover:bg-cyan-500 transition glow-button">Deploy Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-20 px-8 border-t border-white/5 text-center">
+        <div class="logo text-lg font-bold tracking-tighter text-white mb-6 uppercase opacity-20">
+            HRD<span class="text-cyan-400 font-light">SOFT</span>
+        </div>
+        <p class="text-[9px] font-bold tracking-[0.8em] text-slate-800 uppercase">
+            Communication Intelligence // System Specialist // 2026
+        </p>
+    </footer>
+
+</body>
+</html>
