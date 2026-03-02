@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRDSOFT | Autonomous AI Systems & Automation Specialist</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -63,8 +64,11 @@
 
     <nav class="fixed w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <div class="logo text-xl font-bold tracking-tighter text-white uppercase">
-                HRD<span class="text-cyan-400 font-light">SOFT</span>
+            <div class="logo flex items-center gap-3 text-xl font-bold tracking-tighter text-white uppercase">
+                <img src="logo.png" alt="HRDSOFT" class="h-10 w-auto">
+                <div class="leading-none">
+                    HRD<span class="text-cyan-400 font-light">SOFT</span>
+                </div>
             </div>
             <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.3em]">
                 <a href="#systems" class="hover:text-cyan-400 transition">Systems</a>
@@ -241,8 +245,9 @@
     </section>
 
     <footer class="py-20 px-8 border-t border-white/5 text-center">
-        <div class="logo text-lg font-bold tracking-tighter text-white mb-6 uppercase opacity-20">
-            HRD<span class="text-cyan-400 font-light">SOFT</span>
+        <div class="logo flex flex-col items-center gap-4 text-lg font-bold tracking-tighter text-white mb-6 uppercase opacity-40">
+            <img src="logo.png" alt="HRDSOFT" class="h-8 w-auto grayscale brightness-200">
+            <div>HRD<span class="text-cyan-400 font-light">SOFT</span></div>
         </div>
         <p class="text-[9px] font-bold tracking-[0.8em] text-slate-800 uppercase">
             Communication Intelligence // System Specialist // 2026
@@ -256,7 +261,6 @@
     const submitBtn = document.getElementById("submit-btn");
 
     async function handleSubmit(event) {
-        // 1. STOPS the browser from following the Formspree redirect
         event.preventDefault(); 
         
         submitBtn.innerHTML = "SYNCING SYSTEM...";
@@ -264,22 +268,18 @@
 
         const data = new FormData(event.target);
         
-        // 2. We send the data "silently" via fetch
         fetch(event.target.action, {
             method: 'POST',
             body: data,
             headers: {
-                // 3. THIS IS THE KEY: It tells Formspree NOT to redirect
                 'Accept': 'application/json'
             }
         }).then(response => {
             if (response.ok) {
-                // 4. Success! Hide the form and show your custom message
                 formContainer.classList.add("hidden");
                 successMessage.classList.remove("hidden");
                 successMessage.scrollIntoView({ behavior: 'smooth' });
             } else {
-                // 5. If something goes wrong
                 response.json().then(data => {
                     if (Object.hasOwn(data, 'errors')) {
                         alert(data["errors"].map(error => error["message"]).join(", "));
@@ -297,7 +297,6 @@
         });
     }
 
-    // Attach the "handbrake" to the form
     form.addEventListener("submit", handleSubmit);
 </script>
 
