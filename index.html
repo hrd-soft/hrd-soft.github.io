@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRDSOFT | Autonomous AI Systems & Automation Specialist</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;700&display=swap');
         
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #030712; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #030712; margin: 0; padding: 0; }
         h1, h2, h3, h4, h5, .logo { font-family: 'Space Grotesk', sans-serif; }
 
         .bg-dark { background-color: #030712; }
@@ -51,7 +54,8 @@
             background-size: 40px 40px;
         }
 
-        .hidden { display: none !important; }
+        /* Fixed Visibility Issues */
+        section { display: block !important; opacity: 1 !important; visibility: visible !important; }
         
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -176,11 +180,11 @@
     </section>
 
     <section id="verticals" class="py-32 px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-600 mb-16 text-center italic">Operational Verticals</h2>
-            <h3 class="text-4xl font-bold text-white text-center mb-16 tracking-tighter uppercase">Strategic Sector <span class="text-cyan-500">Deployments</span></h3>
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-600 mb-16 italic">Operational Verticals</h2>
+            <h3 class="text-4xl font-bold text-white mb-16 tracking-tighter uppercase">Strategic Sector <span class="text-cyan-500">Deployments</span></h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5 text-left">
                 <div class="bg-dark p-12 hover:bg-[#060b1a] transition">
                     <h5 class="text-white font-bold text-sm tracking-widest uppercase mb-4">Real Estate</h5>
                     <p class="text-[10px] font-black text-cyan-500 mb-4 uppercase tracking-[0.2em]">Lead-To-Tour Automation</p>
@@ -203,7 +207,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 p-12 bento-card rounded-xl text-center">
+            <div class="mt-12 p-12 bento-card rounded-xl">
                 <h5 class="text-white font-bold text-[10px] tracking-[0.5em] uppercase mb-6">Other High-Ticket Sectors</h5>
                 <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Automotive Dealerships • Logistics & Freight • High-Ticket E-Learning • Luxury Hospitality</p>
             </div>
@@ -214,8 +218,8 @@
         <div class="max-w-3xl mx-auto">
             <div id="form-container">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-white mb-4 tracking-tighter uppercase text-center">Initiate Audit</h2>
-                    <p class="text-slate-500 uppercase text-[10px] tracking-[0.3em] font-bold italic text-center">Confidential Performance Analysis</p>
+                    <h2 class="text-4xl font-bold text-white mb-4 tracking-tighter uppercase">Initiate Audit</h2>
+                    <p class="text-slate-500 uppercase text-[10px] tracking-[0.3em] font-bold italic">Confidential Performance Analysis</p>
                 </div>
                 
                 <form id="audit-form" action="https://formspree.io/f/mlgwkqza" method="POST" class="space-y-4">
@@ -236,9 +240,9 @@
             </div>
 
             <div id="success-message" class="hidden text-center py-20 animate-fade-in">
-                <div class="text-cyan-500 text-6xl mb-6 text-center"><i class="fas fa-circle-check"></i></div>
-                <h3 class="text-3xl font-bold text-white mb-4 tracking-tighter uppercase text-center">Deployment Received</h3>
-                <p class="text-slate-500 text-sm tracking-widest uppercase text-center">Our systems have logged your inquiry. <br> Diagnostic review in progress.</p>
+                <div class="text-cyan-500 text-6xl mb-6"><i class="fas fa-circle-check"></i></div>
+                <h3 class="text-3xl font-bold text-white mb-4 tracking-tighter uppercase">Deployment Received</h3>
+                <p class="text-slate-500 text-sm tracking-widest uppercase">Our systems have logged your inquiry. <br> Diagnostic review in progress.</p>
                 <button onclick="window.location.reload()" class="mt-8 text-[10px] text-cyan-500 font-bold uppercase tracking-[0.3em] border-b border-cyan-500 pb-1">Reset Interface</button>
             </div>
         </div>
@@ -254,51 +258,51 @@
         </p>
     </footer>
 
- <script>
-    const form = document.getElementById("audit-form");
-    const formContainer = document.getElementById("form-container");
-    const successMessage = document.getElementById("success-message");
-    const submitBtn = document.getElementById("submit-btn");
+    <script>
+        const form = document.getElementById("audit-form");
+        const formContainer = document.getElementById("form-container");
+        const successMessage = document.getElementById("success-message");
+        const submitBtn = document.getElementById("submit-btn");
 
-    async function handleSubmit(event) {
-        event.preventDefault(); 
-        
-        submitBtn.innerHTML = "SYNCING SYSTEM...";
-        submitBtn.disabled = true;
+        async function handleSubmit(event) {
+            event.preventDefault(); 
+            
+            submitBtn.innerHTML = "SYNCING SYSTEM...";
+            submitBtn.disabled = true;
 
-        const data = new FormData(event.target);
-        
-        fetch(event.target.action, {
-            method: 'POST',
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                formContainer.classList.add("hidden");
-                successMessage.classList.remove("hidden");
-                successMessage.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        alert(data["errors"].map(error => error["message"]).join(", "));
-                    } else {
-                        alert("Deployment Error. Please try again.");
-                    }
-                    submitBtn.innerHTML = "DEPLOY REQUEST";
-                    submitBtn.disabled = false;
-                })
-            }
-        }).catch(error => {
-            alert("Network Error: Connectivity lost.");
-            submitBtn.innerHTML = "DEPLOY REQUEST";
-            submitBtn.disabled = false;
-        });
-    }
+            const data = new FormData(event.target);
+            
+            fetch(event.target.action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    formContainer.classList.add("hidden");
+                    successMessage.classList.remove("hidden");
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert("Deployment Error. Please try again.");
+                        }
+                        submitBtn.innerHTML = "DEPLOY REQUEST";
+                        submitBtn.disabled = false;
+                    })
+                }
+            }).catch(error => {
+                alert("Network Error: Connectivity lost.");
+                submitBtn.innerHTML = "DEPLOY REQUEST";
+                submitBtn.disabled = false;
+            });
+        }
 
-    form.addEventListener("submit", handleSubmit);
-</script>
+        form.addEventListener("submit", handleSubmit);
+    </script>
 
 </body>
 </html>
