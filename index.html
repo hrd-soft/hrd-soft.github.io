@@ -249,49 +249,52 @@
         </p>
     </footer>
 
-    <script>
-        const form = document.getElementById("audit-form");
-        const formContainer = document.getElementById("form-container");
-        const successMessage = document.getElementById("success-message");
-        const submitBtn = document.getElementById("submit-btn");
+  <script>
+    const form = document.getElementById("audit-form");
+    const formContainer = document.getElementById("form-container");
+    const successMessage = document.getElementById("success-message");
+    const submitBtn = document.getElementById("submit-btn");
 
-        async function handleSubmit(event) {
-            event.preventDefault();
-            submitBtn.innerHTML = "PROCESSING...";
-            submitBtn.disabled = true;
-
-            const data = new FormData(event.target);
-            
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    formContainer.classList.add("hidden");
-                    successMessage.classList.remove("hidden");
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert("System Error: Deployment failed. Please try again.");
-                        }
-                        submitBtn.innerHTML = "DEPLOY REQUEST";
-                        submitBtn.disabled = false;
-                    })
-                }
-            }).catch(error => {
-                alert("Network Error: Check your connection.");
-                submitBtn.innerHTML = "DEPLOY REQUEST";
-                submitBtn.disabled = false;
-            });
-        }
+    async function handleSubmit(event) {
+        // This line is the most important - it stops the browser from leaving the page
+        event.preventDefault(); 
         
-        form.addEventListener("submit", handleSubmit);
-    </script>
+        submitBtn.innerHTML = "PROCESSING...";
+        submitBtn.disabled = true;
+
+        const data = new FormData(event.target);
+        
+        // Use the official Formspree AJAX submission method
+        fetch(event.target.action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Success! Hide form, show our custom message
+                formContainer.classList.add("hidden");
+                successMessage.classList.remove("hidden");
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Handle errors
+                response.json().then(data => {
+                    alert("Submission Error: " + (data.errors ? data.errors[0].message : "Unknown error"));
+                    submitBtn.innerHTML = "DEPLOY REQUEST";
+                    submitBtn.disabled = false;
+                });
+            }
+        }).catch(error => {
+            alert("Network Error. Please try again.");
+            submitBtn.innerHTML = "DEPLOY REQUEST";
+            submitBtn.disabled = false;
+        });
+    }
+    
+    // Explicitly attach the listener
+    form.addEventListener("submit", handleSubmit);
+</script>
 
 </body>
 </html>
